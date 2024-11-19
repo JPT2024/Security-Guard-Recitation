@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable List of Military Orders and Abbreviations</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        /* Header Section */
+        header {
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            animation: gradientAnimation 20s infinite alternate;
+            background: linear-gradient(50deg, #E0E0E0, #4C6A92, #F3E2A9);
+            background-size: 600% 600%;
+            position: relative;
+        }
+
+        /* Logo Styles */
+        header img {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: auto;
+        }
+
+        /* Title for the header */
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+        }
+
+        /* Main Content Area */
+        main {
+            text-align: center;
+            padding: 30px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #003366;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Title Styles (Clickable Links) */
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #007BFF;
+            margin: 15px 0;
+            padding: 12px 20px;
+            background-color: #ffffff;
+            border: 2px solid #007BFF;
+            border-radius: 12px;  /* Softer, rounded corners */
+            width: 80%;
+            max-width: 350px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Softer shadow */
+            display: inline-block;
+        }
+
+        /* Hover Effects for Titles */
+        .title:hover {
+            background-color: #007BFF;
+            color: white;
+            border-color: #0056b3;
+            transform: scale(1.03);  /* Softer scaling */
+        }
+
+        /* Active State for Titles */
+        .title:active {
+            background-color: #0056b3;
+            border-color: #003366;
+            transform: scale(1.02);  /* Softer active state */
+        }
+
+        /* Page Transitions */
+        .page-transition {
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .page-transition.fade {
+            opacity: 0;
+        }
+
+        /* Gradient Animation Keyframes */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Button Style */
+        .back-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 16px;
+                padding: 10px 15px;
+                width: 90%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .back-btn {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section with Logo and Company Name -->
+    <header>
+        <a href="https://valdezsecurity.com/" target="_blank">
+            <img src="images/Valdez_Logo-removebg-preview.png" alt="VSIAI Logo">
+        </a>
+        <h1>Valdez Security and Investigations Agency, Inc.</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <h2>Military Orders and Abbreviations</h2>
+
+        <!-- Clickable Titles -->
+        <div class="title" id="general-orders" onclick="redirectWithTransition('general-orders')">11 General Orders</div>
+        <div class="title" id="padpao" onclick="redirectWithTransition('padpao')">What is PADPAO?</div>
+        <div class="title" id="sosia" onclick="redirectWithTransition('sosia')">What is SOSIA?</div>
+        <div class="title" id="ra5487" onclick="redirectWithTransition('ra5487')">R.A. 5487</div>
+        <div class="title" id="security" onclick="redirectWithTransition('security')">Security</div>
+        <div class="title" id="typesofbarriers" onclick="redirectWithTransition('typesofbarriers')">Types of Barriers</div>
+        <div class="title" id="cardinalrulesofgunsafety" onclick="redirectWithTransition('cardinalrulesofgunsafety')">Cardinal Rules of Gun Safety</div>
+        <div class="title" id="firstaid" onclick="redirectWithTransition('firstaid')">First Aid</div>
+        <div class="title" id="fireextinguisher" onclick="redirectWithTransition('fireextinguisher')">How to Use Fire Extinguisher</div>
+
+        <!-- Additional Links to Mission and Vision, Core Values -->
+        <div class="title" id="mission-and-vision" onclick="redirectWithTransition('mission-and-vision')">Mission and Vision</div>
+        <div class="title" id="core-values" onclick="redirectWithTransition('core-values')">Core Values</div>
+    </main>
+
+    <script>
+        function redirectWithTransition(page) {
+            // Apply fade-out effect to the title before redirecting
+            var titleElement = document.getElementById(page);
+            titleElement.classList.add('fade-out');
+
+            // Wait for transition to finish before redirecting
+            setTimeout(function() {
+                // Redirection logic based on the clicked page
+                if (page === 'general-orders') {
+                    window.location.href = 'general-orders.html';
+                } else if (page === 'padpao') {
+                    window.location.href = 'padpao.html';
+                } else if (page === 'sosia') {
+                    window.location.href = 'sosia.html';
+                } else if (page === 'ra5487') {
+                    window.location.href = 'ra5487.html';
+                } else if (page === 'security') {
+                    window.location.href = 'security.html';
+                } else if (page === 'typesofbarriers') {
+                    window.location.href = 'typesofbarriers.html';
+                } else if (page === 'cardinalrulesofgunsafety') {
+                    window.location.href = 'cardinalrulesofgunsafety.html';
+                } else if (page === 'firstaid') {
+                    window.location.href = 'firstaid.html';
+                } else if (page === 'fireextinguisher') {
+                    window.location.href = 'fireextinguisher.html';
+                } else if (page === 'mission-and-vision') {
+                    window.location.href = 'missionandvision.html';  // Redirection to Mission and Vision
+                } else if (page === 'core-values') {
+                    window.location.href = 'corevalues.html';  // Redirection to Core Values
+                }
+            }, 300); // Wait for the fade effect to complete
+        }
+    </script>
+
+</body>
+</html>
