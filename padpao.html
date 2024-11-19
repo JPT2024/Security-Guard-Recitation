@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is PADPAO?</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            text-align: center;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        /* Minimalistic Header Section */
+        header {
+            background: linear-gradient(50deg, #4C6A92, #F3E2A9);
+            padding: 30px 0;
+            color: white;
+            text-align: center;
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #004080; /* Blue color */
+            margin-top: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 20px;
+            color: #333;
+        }
+
+        /* Abbreviation Text Styling for PADPAO */
+        .abbreviation {
+            font-size: 24px;
+            font-weight: normal;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .abbreviation span {
+            font-weight: bold;
+            color: #007BFF; /* Blue color for each first letter */
+        }
+
+        /* Button Style */
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Gradient Animation Keyframes */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .abbreviation {
+                font-size: 20px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Minimalistic Header Section -->
+    <header>
+        <h1>What is PADPAO?</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <p><strong>PADPAO</strong> stands for:</p>
+        <p class="abbreviation">
+            <span>P</span>hilippine <span>A</span>ssociation of <span>D</span>etective and <span>P</span>rotective <span>A</span>gency <span>O</span>perators Inc.
+        </p>
+
+        <!-- Back Button -->
+        <button onclick="window.history.back();">Back</button>
+    </main>
+
+    <script>
+        // Optional: Fade-in effect when the page loads
+        window.onload = function() {
+            document.body.style.opacity = 1;
+            document.body.style.transition = "opacity 1s ease-in-out";
+        };
+    </script>
+
+</body>
+</html>
+

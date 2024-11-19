@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Extinguisher</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Header Styling */
+        h1 {
+            font-size: 30px;
+            color: #003366;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 10px;
+        }
+
+        /* Main Content Styling */
+        main {
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Underline Important Text */
+        .underline {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Highlighting the PASS Steps */
+        .pass-step {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background-color: #003366;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        /* Hover Effect for Each Step */
+        .pass-step:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Animation for Steps */
+        .pass-step:nth-child(1) {
+            animation: slide-in 0.5s ease-in-out;
+        }
+        .pass-step:nth-child(2) {
+            animation: slide-in 0.7s ease-in-out;
+        }
+        .pass-step:nth-child(3) {
+            animation: slide-in 0.9s ease-in-out;
+        }
+        .pass-step:nth-child(4) {
+            animation: slide-in 1s ease-in-out;
+        }
+
+        /* Keyframes for Slide-In Animation */
+        @keyframes slide-in {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Back Button Styles */
+        .back-btn {
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #002244;
+        }
+
+        /* Description Styling */
+        .description {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9f4ff;
+            border-radius: 5px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            display: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            .pass-step {
+                width: 80%;
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Fire Extinguisher</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2>How to Use a Fire Extinguisher (PASS Method)</h2>
+
+        <p>The PASS technique is a simple and effective method for using a fire extinguisher:</p>
+
+        <!-- Highlighted Steps of PASS -->
+        <div>
+            <div class="pass-step" onclick="showDescription('pull')">P - Pull the Pin</div>
+            <div class="pass-step" onclick="showDescription('aim')">A - Aim the Nozzle</div>
+            <div class="pass-step" onclick="showDescription('squeeze')">S - Squeeze the Handle</div>
+            <div class="pass-step" onclick="showDescription('sweep')">S - Sweep from Side to Side</div>
+        </div>
+
+        <!-- Description Areas for Each Step -->
+        <div id="pull" class="description">
+            <strong>Pull the Pin:</strong><br>
+            Pull the pin at the top of the extinguisher, breaking the seal. When in place, the pin keeps the handle from being pressed and accidentally operating the extinguisher. Immediately test the extinguisher (aiming away from the operator). This is to ensure the extinguisher works and also shows the operator how far the stream travels.
+        </div>
+        <div id="aim" class="description">
+            <strong>Aim the Nozzle:</strong><br>
+            Approach the fire standing at a safe distance. Aim the nozzle or outlet towards the base of the fire.
+        </div>
+        <div id="squeeze" class="description">
+            <strong>Squeeze the Handle:</strong><br>
+            Squeeze the handles together to discharge the extinguishing agent inside. To stop discharge, release the handles.
+        </div>
+        <div id="sweep" class="description">
+            <strong>Sweep from Side to Side:</strong><br>
+            Sweep the nozzle from side to side as you approach the fire, directing the extinguishing agent at the base of the flames. After an A-Class fire is extinguished, probe for smoldering hot spots that could reignite the fuel.
+        </div>
+
+        <!-- Back Button -->
+        <button class="back-btn" onclick="window.history.back();">Back</button>
+    </main>
+
+    <script>
+        // Function to show description based on the step clicked
+        function showDescription(step) {
+            // Hide all descriptions first
+            const descriptions = document.querySelectorAll('.description');
+            descriptions.forEach(description => {
+                description.style.display = 'none';
+            });
+
+            // Show the selected description
+            const description = document.getElementById(step);
+            description.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

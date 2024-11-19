@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Values (VALDEZ & CLIP)</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Header Styling */
+        h1 {
+            font-size: 30px;
+            color: #003366;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 10px;
+        }
+
+        /* Core Values Letters (V A L D E Z & C L I P) */
+        .core-letter {
+            font-size: 40px; /* Font size for letters */
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+            padding: 15px;
+            background-color: #003366;
+            color: white;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px; /* Set a consistent width */
+            height: 70px; /* Set a consistent height */
+        }
+
+        /* Hover Effect for Each Letter */
+        .core-letter:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Description Styling (Pop-up Box) */
+        .description {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            z-index: 9999; /* Ensure it's above all content */
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in-out; /* Add fade-in animation */
+        }
+
+        .description-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 60%;
+            max-width: 400px;
+            text-align: left;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.5s ease-in-out; /* Slide-up animation */
+            position: relative;
+        }
+
+        .description-content h2 {
+            margin-top: 0;
+        }
+
+        .close-btn {
+            background-color: #003366;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .close-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Core Values Container */
+        .core-values-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px; /* Reduced gap between letters */
+            margin-top: 30px;
+        }
+
+        /* Back Button Styles */
+        .back-btn {
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #002244;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .core-letter {
+                font-size: 32px; /* Even smaller font size for smaller screens */
+                padding: 12px;
+                margin: 8px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Core Values</h1>
+    </header>
+
+    <!-- Main Content for Core Values -->
+    <main>
+        <!-- Core Value Letters (V A L D E Z) -->
+        <div class="core-values-container">
+            <span class="core-letter" onclick="showDescription('visionary')">V</span>
+            <span class="core-letter" onclick="showDescription('authentic')">A</span>
+            <span class="core-letter" onclick="showDescription('learner')">L</span>
+            <span class="core-letter" onclick="showDescription('disciplined')">D</span>
+            <span class="core-letter" onclick="showDescription('empowered')">E</span>
+            <span class="core-letter" onclick="showDescription('zealous')">Z</span>
+        </div>
+
+        <!-- Core Value Letters (C L I P) -->
+        <div class="core-values-container">
+            <span class="core-letter" onclick="showDescription('character')">C</span>
+            <span class="core-letter" onclick="showDescription('love')">L</span>
+            <span class="core-letter" onclick="showDescription('integrity')">I</span>
+            <span class="core-letter" onclick="showDescription('professionalism')">P</span>
+        </div>
+
+        <!-- Back Button -->
+        <button class="back-btn" onclick="window.history.back();">Back</button>
+    </main>
+
+    <!-- Description Pop-Up for Each Core Value -->
+    <div id="visionary" class="description">
+        <div class="description-content">
+            <button class="close-btn" onclick="closeDescription()">X</button>
+            <h2>Visionary:</h2>
+            <p>Having a clear direction towards our purpose to serve, bigger than ourselves, to change lives for the better.</p>
+        </div>
+    </div>
+
+    <div id="authentic" class="description">
+        <div class="description-content">
+            <button class="close-btn" onclick="closeDescription()">X</button>
+            <h2>Authentic:</h2>
+            <p>Being real and aligned with our thoughts, feelings, sayings, and doings.</p>
+        </div>
+    </div>
+
+    <div id="learner" class="description">
+        <div class="description-content">
+            <button class="close-btn" onclick="closeDescription()">X</button>
+            <h2>Learner:</h2>
+            <p>Having a "growth mindset", a life committed to continual personal growth, because change is essential.</p>
+        </div>
+    </div>
+
+    <div id="disciplined" class="description">
+        <div class="description-content">
+            <button class="close-btn" onclick="closeDescription()">X</button>
+            <h2>Disciplined:</h2>
+            <p>Starting with self-awareness and doing the right thing every day. Habits, consistency, and systems are keys.</p>
+        </div>
+    </div>
+
+    <div id="empowered" class="description">
+        <div class="description-content">
+            <button class="close-btn" onclick="closeDescription()">X</button>
+            <h2>Empowered:</h2>
+            <p>Believing in our people, giving them resources, encouraging and building to lead the self and others.</p>
+        </div>
+    </div>
+
+    <div id="zealous" class="description">
+        <div class="description-content">
+            <button class="close-btn" onclick="closeDescription()">X</button>
+            <h2>Zealous:</h2>
+            <p>Knowing the truth and living by faith. God transforming our hearts and minds from inside out.</p>
+        </div>
+    </div>
+
+    <div id="character" class="description">
+        <div class="description-content">
+            <button class="close-btn" onclick="closeDescription()">X</button>
+            <h2>Character:</h2>
+            <p>Embodying many important traits, the foundation of trust & leadership, that we continue to develop.</p>
+        </div>
+    </div>
+
+    <div id="love" class="description">
+        <div class="description-content">
+            <button class="close-btn" onclick="closeDescription()">X</button>
+            <h2>Love:</h2>
+            <p>Our commitment to caring, listening, helping them grow, and supporting them in their journey.</p>
+        </div>
+    </div>
+
+    <div id="integrity" class="description">
+        <div class="description-content">
+            <button class="close-btn" onclick="closeDescription()">X</button>
+            <h2>Integrity:</h2>
+            <p>Living a life of honesty, truthfulness, and doing the right thing even when no one is watching.</p>
+        </div>
+    </div>
+
+    <div id="professionalism" class="description">
+        <div class="description-content">
+            <button class="close-btn" onclick="closeDescription()">X</button>
+            <h2>Professionalism:</h2>
+            <p>Maintaining high standards, accountability, and a commitment to continuous improvement in all we do.</p>
+        </div>
+    </div>
+
+    <script>
+        // Show description pop-up
+        function showDescription(value) {
+            document.getElementById(value).style.display = 'flex'; // Show the specific description
+        }
+
+        // Close the description pop-up
+        function closeDescription() {
+            const descriptions = document.querySelectorAll('.description');
+            descriptions.forEach(function(desc) {
+                desc.style.display = 'none'; // Hide all descriptions
+            });
+        }
+    </script>
+
+</body>
+</html>

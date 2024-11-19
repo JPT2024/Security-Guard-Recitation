@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11 General Orders</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Header Styling */
+        h1 {
+            font-size: 30px; /* Made the header a bit smaller */
+            color: #003366;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 10px;
+        }
+
+        /* Container for image and text */
+        .content-container {
+            display: flex;
+            align-items: center; /* Vertically align the image and text */
+            justify-content: center;
+            margin: 20px;
+        }
+
+        /* Image styling */
+        .image-container {
+            margin-right: 3px;
+        }
+
+        img {
+            width: 250px; /* Adjust image size smaller */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Paragraph Styles for Orders */
+        ol {
+            list-style-type: decimal; /* Plain numbering */
+            margin: 20px auto;
+            padding: 0;
+            width: 70%;
+            text-align: left;
+            font-size: 16px; /* Slightly smaller font size */
+            line-height: 1.6;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: transparent; /* No background */
+            border: none;
+        }
+
+        /* Bold the Numbering (List markers) */
+        ol li::marker {
+            font-weight: bold; /* Bold the number */
+            font-size: 20px; /* Optional: adjust the size of the number */
+        }
+
+        /* Styling for text inside parentheses */
+        ol li span.parenthesis {
+            color: #666; /* A different shade of black (gray) */
+            font-style: italic; /* Optionally italicized for more emphasis */
+        }
+
+        /* Back Button Styles */
+        button {
+            padding: 10px 20px; /* Fixed padding */
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 5px;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #002244;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            ol {
+                width: 85%;
+                font-size: 14px; /* Even smaller text on smaller screens */
+            }
+
+            .content-container {
+                flex-direction: column; /* Stack the image and text on smaller screens */
+                align-items: center;
+            }
+
+            .image-container {
+                margin-right: 0;
+                margin-bottom: 20px; /* Add space below the image on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>11 General Orders</h1>
+
+    <!-- Container for the image and text -->
+    <div class="content-container">
+        <!-- Image -->
+        <div class="image-container">
+            <img src="C:/Users/VSIAI - Jhon/Desktop/Security guard recitation/Images/11 GO.png" alt="11 General Orders Image">
+        </div>
+
+        <!-- List of orders -->
+        <ol>
+            <li>To take charge of this post and all company property in view and protect/preserve the same utmost diligence. <span class="parenthesis">(Pangasiwaan ng buong husay ang pangangalaga ng pook o kumpanyang binabantayan, pati na ang lahat ng ari-arian)</span></li>
+            <li>To walk in alert manner, during my tour of duty and observe everything within sight or hearing. <span class="parenthesis">(Lumakad nang laging handa at magmasid at makinig ng mabuti sa anumang nangyayari sa paligid)</span></li>
+            <li>To report all violations of regulations or orders I am instructed to enforce. <span class="parenthesis">(Gumawa ng report tungkol sa mga katuwalian laban sa mga kautusang inuro sa aking dapat ipatupad)</span></li>
+            <li>To relay all calls from more distant posts than the guardhouse where I am stationed. <span class="parenthesis">(Ipaalam lahat ng tawag mula sa malayo kaysa sa aking bahay-tanod)</span></li>
+            <li>To quit my post only when properly relieved. <span class="parenthesis">(Lisanin ang aking kinatatalagahan pagkatapos mahalinhan nang maayos)</span></li>
+            <li>To receive, obey, and pass on to the relieving guard all orders from the company officials, officers in the agency, supervisor, post in charge of shift leaders. <span class="parenthesis">(Tanggapin, sundin at ipagbigay-alam sa aking kahaliling tanod ang lahat na utos ng pinuno at opisyal ng kumpanya, supervisor, post in charge o shift leader)</span></li>
+            <li>To talk to no one except in the line of duty. <span class="parenthesis">(Huwag makipag-usap kanino man habang nakatalaga maliban lamang hinggil sa tungkulin)</span></li>
+            <li>To sound or call the alarm in case of fire or disorder. <span class="parenthesis">(Magbabala kung may sunog o gulo)</span></li>
+            <li>To call the superior officer in any case not covered by the instructions. <span class="parenthesis">(Ipagbigay-alam sa nakakataas na opisyal kung may anumang bagay na hindi nasasaklaw ng mga tagubilin)</span></li>
+            <li>To salute all company officials, officers of the agency, ranking public officials and officers of the AFP and PNP. <span class="parenthesis">(Sumaludo sa mga pinuno ng kumpanya, ahensya, gobyerno, at opisyal ng Philippine National Police o PNP)</span></li>
+            <li>To be especially watchful at night, and during the time of challenge all persons on or near my post, and to allow no one to pass without proper authority. <span class="parenthesis">(Maging mahigpit na mapagmasid lalo na sa gabi at maselang panahon, usisaing mabuti kung sino ang bawat nakapaligid o malapit sa aking pinatatanuran, at huwag pahintulutang makaraan ang sinuman ang walang pahintulot)</span></li>
+        </ol>
+    </div>
+
+    <button onclick="window.history.back();">Back</button> <!-- Back button to return to the previous page -->
+
+</body>
+</html>
+
