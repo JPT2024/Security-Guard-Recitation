@@ -23,25 +23,25 @@
             animation: gradientAnimation 20s infinite alternate;
             background: linear-gradient(50deg, #E0E0E0, #4C6A92, #F3E2A9);
             background-size: 600% 600%;
-            position: relative;
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: column; /* Stack logo and text vertically */
+            align-items: center; /* Center items horizontally */
         }
 
         /* Logo Styles */
         header img {
-            position: absolute;
-            top: 10px; /* Adjusted position */
-            left: 10px; /* Adjusted position */
-            width: 100px; /* Slightly reduced for better fit */
+            width: 100px; /* Logo size */
             height: auto;
+            margin-bottom: 10px; /* Space between logo and title */
         }
 
         /* Title for the header */
         header h1 {
             font-size: 36px;
             font-weight: bold;
-            margin-top: 10px; /* Reduced margin to prevent overlap */
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
             color: #ffffff;
+            margin: 0; /* Remove default margin */
         }
 
         /* Main Content Area */
@@ -134,14 +134,15 @@
 
         /* Responsive Styles */
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px; /* Reduced header size on mobile */
+                margin-top: 10px; /* Spacing above header text */
+            }
+
             .title {
                 font-size: 16px;
                 padding: 10px 15px;
                 width: 90%;
-            }
-
-            header h1 {
-                font-size: 28px;
             }
 
             h2 {
