@@ -69,11 +69,11 @@
             padding: 12px 20px;
             background-color: #ffffff;
             border: 2px solid #007BFF;
-            border-radius: 12px;  /* Softer, rounded corners */
+            border-radius: 12px;
             width: 80%;
             max-width: 350px;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Softer shadow */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: inline-block;
         }
 
@@ -82,14 +82,14 @@
             background-color: #007BFF;
             color: white;
             border-color: #0056b3;
-            transform: scale(1.03);  /* Softer scaling */
+            transform: scale(1.03);
         }
 
         /* Active State for Titles */
         .title:active {
             background-color: #0056b3;
             border-color: #003366;
-            transform: scale(1.02);  /* Softer active state */
+            transform: scale(1.02);
         }
 
         /* Page Transitions */
@@ -179,8 +179,6 @@
         <div class="title" id="cardinalrulesofgunsafety" onclick="redirectWithTransition('cardinalrulesofgunsafety')">Cardinal Rules of Gun Safety</div>
         <div class="title" id="firstaid" onclick="redirectWithTransition('firstaid')">First Aid</div>
         <div class="title" id="fireextinguisher" onclick="redirectWithTransition('fireextinguisher')">How to Use Fire Extinguisher</div>
-
-        <!-- Additional Links to Mission and Vision, Core Values -->
         <div class="title" id="mission-and-vision" onclick="redirectWithTransition('mission-and-vision')">Mission and Vision</div>
         <div class="title" id="core-values" onclick="redirectWithTransition('core-values')">Core Values</div>
     </main>
@@ -194,28 +192,24 @@
             // Wait for transition to finish before redirecting
             setTimeout(function() {
                 // Redirection logic based on the clicked page
-                if (page === 'general-orders') {
-                    window.location.href = 'general-orders.html';
-                } else if (page === 'padpao') {
-                    window.location.href = 'padpao.html';
-                } else if (page === 'sosia') {
-                    window.location.href = 'sosia.html';
-                } else if (page === 'ra5487') {
-                    window.location.href = 'ra5487.html';
-                } else if (page === 'security') {
-                    window.location.href = 'security.html';
-                } else if (page === 'typesofbarriers') {
-                    window.location.href = 'typesofbarriers.html';
-                } else if (page === 'cardinalrulesofgunsafety') {
-                    window.location.href = 'cardinalrulesofgunsafety.html';
-                } else if (page === 'firstaid') {
-                    window.location.href = 'firstaid.html';
-                } else if (page === 'fireextinguisher') {
-                    window.location.href = 'fireextinguisher.html';
-                } else if (page === 'mission-and-vision') {
-                    window.location.href = 'missionandvision.html';  // Redirection to Mission and Vision
-                } else if (page === 'core-values') {
-                    window.location.href = 'corevalues.html';  // Redirection to Core Values
+                const pages = {
+                    'general-orders': 'general-orders.html',
+                    'padpao': 'padpao.html',
+                    'sosia': 'sosia.html',
+                    'ra5487': 'ra5487.html',
+                    'security': 'security.html',
+                    'typesofbarriers': 'typesofbarriers.html',
+                    'cardinalrulesofgunsafety': 'cardinalrulesofgunsafety.html',
+                    'firstaid': 'firstaid.html',
+                    'fireextinguisher': 'fireextinguisher.html',
+                    'mission-and-vision': 'missionandvision.html',  // Adjusted for consistency
+                    'core-values': 'corevalues.html'  // Adjusted for consistency
+                };
+                
+                if (pages[page]) {
+                    window.location.href = pages[page];
+                } else {
+                    console.error("Page not found: " + page);
                 }
             }, 300); // Wait for the fade effect to complete
         }
