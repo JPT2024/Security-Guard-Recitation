@@ -19,7 +19,7 @@
         header {
             color: white;
             text-align: center;
-            padding: 30px 0;
+            padding: 20px 0; /* Reduced padding to create more space */
             animation: gradientAnimation 20s infinite alternate;
             background: linear-gradient(50deg, #E0E0E0, #4C6A92, #F3E2A9);
             background-size: 600% 600%;
@@ -30,14 +30,14 @@
 
         /* Logo Styles */
         header img {
-            width: 100px; /* Logo size */
+            width: 100px; /* Fixed logo size */
             height: auto;
             margin-bottom: 10px; /* Space between logo and title */
         }
 
         /* Title for the header */
         header h1 {
-            font-size: 36px;
+            font-size: 28px; /* Adjusted font size */
             font-weight: bold;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
             color: #ffffff;
@@ -135,8 +135,12 @@
         /* Responsive Styles */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 28px; /* Reduced header size on mobile */
-                margin-top: 10px; /* Spacing above header text */
+                font-size: 24px; /* Smaller size for mobile */
+                margin-top: 10px; /* Margin above header text */
+            }
+
+            header img {
+                width: 80px; /* Smaller logo on mobile */
             }
 
             .title {
@@ -146,7 +150,7 @@
             }
 
             h2 {
-                font-size: 24px;
+                font-size: 24px; /* Smaller subheading */
             }
 
             .back-btn {
