@@ -52,7 +52,7 @@
 
         /* Description Styling (Pop-up Box) */
         .description {
-            display: none;
+            display: none; /* Initially hidden */
             position: fixed;
             top: 0;
             left: 0;
@@ -62,7 +62,6 @@
             z-index: 9999; /* Ensure it's above all content */
             justify-content: center;
             align-items: center;
-            animation: fadeIn 0.5s ease-in-out; /* Add fade-in animation */
         }
 
         .description-content {
@@ -73,12 +72,7 @@
             max-width: 400px;
             text-align: left;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-            animation: slideUp 0.5s ease-in-out; /* Slide-up animation */
             position: relative;
-        }
-
-        .description-content h2 {
-            margin-top: 0;
         }
 
         .close-btn {
@@ -120,48 +114,6 @@
 
         .back-btn:hover {
             background-color: #002244;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideUp {
-            0% {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            .core-letter {
-                font-size: 32px; /* Smaller font size for smaller screens */
-                padding: 12px;
-                margin: 8px;
-            }
-
-            main {
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
         }
     </style>
 </head>
@@ -280,7 +232,12 @@
     <script>
         // Show description pop-up
         function showDescription(value) {
-            document.getElementById(value).style.display = 'flex'; // Show the specific description
+            const description = document.getElementById(value);
+            if (description) {
+                description.style.display = 'flex'; // Show the specific description
+            } else {
+                console.error(`No description found for: ${value}`);
+            }
         }
 
         // Close the description pop-up
