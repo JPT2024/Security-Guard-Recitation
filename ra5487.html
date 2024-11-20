@@ -40,34 +40,6 @@
             font-weight: bold;
         }
 
-        /* Container for List */
-        .list-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Two equal columns */
-            gap: 20px;
-            width: 80%; /* Set the width to 80% to center the content */
-            margin: 0 auto;
-            text-align: left;
-            padding-left: 30px;
-        }
-
-        /* Styling for the unordered list */
-        ul {
-            list-style-type: none; /* No bullets */
-            padding-left: 0;
-            margin: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        /* Styling for text inside parentheses */
-        ul li span.parenthesis {
-            color: #666; /* Different shade of black (gray) */
-            font-style: italic; /* Italicized for emphasis */
-        }
-
         /* Back Button Styles */
         .back-btn {
             padding: 10px 20px;
@@ -89,11 +61,6 @@
             body {
                 padding: 10px;
             }
-
-            .list-container {
-                grid-template-columns: 1fr; /* Stack columns vertically on smaller screens */
-                padding-left: 0; /* Remove left padding for smaller screens */
-            }
         }
     </style>
 </head>
@@ -111,16 +78,6 @@
         <p>
             <strong>An act governing the organization and management of private security agencies, company guard forces, and government security forces.</strong> This act is otherwise known as the <span class="underline">Private Security Agency Law</span>.
         </p>
-
-        <!-- Example List (if needed) -->
-        <div class="list-container">
-            <ul>
-                <li>Definition of Private Security Agency</li>
-                <li>Licensing Requirements</li>
-                <li>Responsibilities of Private Security Agencies</li>
-                <li>Regulatory Authority</li>
-            </ul>
-        </div>
 
         <!-- Back Button -->
         <button class="back-btn" onclick="window.history.back();">Back</button>
