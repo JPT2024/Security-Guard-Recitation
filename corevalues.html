@@ -7,7 +7,7 @@
     <style>
         /* General Body Styles */
         body {
-            font-family: "Times New Roman", Times, serif;
+            font-family: "Arial", sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -17,31 +17,38 @@
 
         /* Header Styling */
         h1 {
-            font-size: 30px;
+            font-size: 36px;
             color: #003366;
-            margin-top: 20px;
+            margin-top: 30px;
             text-transform: uppercase;
             font-weight: bold;
             border-bottom: 2px solid #003366;
             padding-bottom: 10px;
+            letter-spacing: 1px;
+            animation: fadeIn 1s ease-out;
         }
 
-        /* Core Values Letters (V A L D E Z & C L I P) */
+        /* Main Content Styling */
+        main {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* Core Values Letters */
         .core-letter {
             font-size: 40px; /* Font size for letters */
             font-weight: bold;
             cursor: pointer;
-            margin: 1px;
+            margin: 10px;
             padding: 15px;
             background-color: #003366;
             color: white;
             border-radius: 10px;
             transition: background-color 0.3s, transform 0.3s;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
+            display: inline-block;
             width: 70px; /* Set a consistent width */
             height: 70px; /* Set a consistent height */
+            line-height: 70px; /* Center text vertically */
         }
 
         /* Hover Effect for Each Letter */
@@ -50,70 +57,81 @@
             transform: scale(1.1);
         }
 
-        /* Description Styling (Pop-up Box) */
-        .description {
-            display: none; /* Initially hidden */
+        /* Modal Styles */
+        /* The modal background */
+        .modal {
+            display: none; /* Hidden by default */
             position: fixed;
-            top: 0;
+            z-index: 1; /* Sit on top */
             left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            z-index: 9999; /* Ensure it's above all content */
-            justify-content: center;
-            align-items: center;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+            padding-top: 60px;
         }
 
-        .description-content {
-            background-color: white;
+        /* Modal Content */
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
             padding: 20px;
             border-radius: 8px;
-            width: 60%;
-            max-width: 400px;
-            text-align: left;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .close-btn {
-            background-color: #003366;
-            color: white;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
+        /* Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
             cursor: pointer;
-            position: absolute;
-            top: 10px;
-            right: 10px;
         }
 
-        .close-btn:hover {
-            background-color: #0056b3;
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
         }
 
-        /* Core Values Container */
-        .core-values-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px; /* Reduced gap between letters */
-            margin-top: 30px;
-        }
-
-        /* Back Button Styles */
+        /* Back Button Styling */
         .back-btn {
             padding: 10px 20px;
             background-color: #003366;
             color: white;
             border: none;
-            border-radius: 3px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
+            font-size: 18px;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
         }
 
         .back-btn:hover {
             background-color: #002244;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .core-letter {
+                font-size: 30px;
+                width: 60px;
+                height: 60px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
@@ -127,124 +145,129 @@
     <!-- Main Content for Core Values -->
     <main>
         <!-- Core Value Letters (V A L D E Z) -->
-        <div class="core-values-container">
-            <span class="core-letter" onclick="showDescription('visionary')">V</span>
-            <span class="core-letter" onclick="showDescription('authentic')">A</span>
-            <span class="core-letter" onclick="showDescription('learner')">L</span>
-            <span class="core-letter" onclick="showDescription('disciplined')">D</span>
-            <span class="core-letter" onclick="showDescription('empowered')">E</span>
-            <span class="core-letter" onclick="showDescription('zealous')">Z</span>
+        <div>
+            <span class="core-letter" onclick="showModal('visionary-info')">V</span>
+            <span class="core-letter" onclick="showModal('authentic-info')">A</span>
+            <span class="core-letter" onclick="showModal('learner-info')">L</span>
+            <span class="core-letter" onclick="showModal('disciplined-info')">D</span>
+            <span class="core-letter" onclick="showModal('empowered-info')">E</span>
+            <span class="core-letter" onclick="showModal('zealous-info')">Z</span>
         </div>
 
         <!-- Core Value Letters (C L I P) -->
-        <div class="core-values-container">
-            <span class="core-letter" onclick="showDescription('character')">C</span>
-            <span class="core-letter" onclick="showDescription('love')">L</span>
-            <span class="core-letter" onclick="showDescription('integrity')">I</span>
-            <span class="core-letter" onclick="showDescription('professionalism')">P</span>
+        <div>
+            <span class="core-letter" onclick="showModal('character-info')">C</span>
+            <span class="core-letter" onclick="showModal('love-info')">L</span>
+            <span class="core-letter" onclick="showModal('integrity-info')">I</span>
+            <span class="core-letter" onclick="showModal('professionalism-info')">P</span>
         </div>
 
         <!-- Back Button -->
         <button class="back-btn" onclick="window.history.back();">Back</button>
     </main>
 
-    <!-- Description Pop-Up for Each Core Value -->
-    <div id="visionary" class="description">
-        <div class="description-content">
-            <button class="close-btn" onclick="closeDescription()">X</button>
-            <h2>Visionary:</h2>
+    <!-- Modal for displaying information -->
+    <div id="visionary-info" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('visionary-info')">&times;</span>
+            <h2>Visionary</h2>
             <p>Having a clear direction towards our purpose to serve, bigger than ourselves, to change lives for the better.</p>
         </div>
     </div>
 
-    <div id="authentic" class="description">
-        <div class="description-content">
-            <button class="close-btn" onclick="closeDescription()">X</button>
-            <h2>Authentic:</h2>
+    <div id="authentic-info" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('authentic-info')">&times;</span>
+            <h2>Authentic</h2>
             <p>Being real and aligned with our thoughts, feelings, sayings, and doings.</p>
         </div>
     </div>
 
-    <div id="learner" class="description">
-        <div class="description-content">
-            <button class="close-btn" onclick="closeDescription()">X</button>
-            <h2>Learner:</h2>
+    <div id="learner-info" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('learner-info')">&times;</span>
+            <h2>Learner</h2>
             <p>Having a "growth mindset", a life committed to continual personal growth, because change is essential.</p>
         </div>
     </div>
 
-    <div id="disciplined" class="description">
-        <div class="description-content">
-            <button class="close-btn" onclick="closeDescription()">X</button>
-            <h2>Disciplined:</h2>
+    <div id="disciplined-info" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('disciplined-info')">&times;</span>
+            <h2>Disciplined</h2>
             <p>Starting with self-awareness and doing the right thing every day. Habits, consistency, and systems are keys.</p>
         </div>
     </div>
 
-    <div id="empowered" class="description">
-        <div class="description-content">
-            <button class="close-btn" onclick="closeDescription()">X</button>
-            <h2>Empowered:</h2>
+    <div id="empowered-info" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('empowered-info')">&times;</span>
+            <h2>Empowered</h2>
             <p>Believing in our people, giving them resources, encouraging and building to lead the self and others.</p>
         </div>
     </div>
 
-    <div id="zealous" class="description">
-        <div class="description-content">
-            <button class="close-btn" onclick="closeDescription()">X</button>
-            <h2>Zealous:</h2>
+    <div id="zealous-info" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('zealous-info')">&times;</span>
+            <h2>Zealous</h2>
             <p>Knowing the truth and living by faith. God transforming our hearts and minds from inside out.</p>
         </div>
     </div>
 
-    <div id="character" class="description">
-        <div class="description-content">
-            <button class="close-btn" onclick="closeDescription()">X</button>
-            <h2>Character:</h2>
+    <div id="character-info" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('character-info')">&times;</span>
+            <h2>Character</h2>
             <p>Embodying many important traits, the foundation of trust & leadership, that we continue to develop.</p>
         </div>
     </div>
 
-    <div id="love" class="description">
-        <div class="description-content">
-            <button class="close-btn" onclick="closeDescription()">X</button>
-            <h2>Love:</h2>
+    <div id="love-info" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('love-info')">&times;</span>
+            <h2>Love</h2>
             <p>Our commitment to caring, listening, helping them grow, and supporting them in their journey.</p>
         </div>
     </div>
 
-    <div id="integrity" class="description">
-        <div class="description-content">
-            <button class="close-btn" onclick="closeDescription()">X</button>
-            <h2>Integrity:</h2>
-            <p>Living a life of honesty, truthfulness, and doing the right thing even when no one is watching.</p>
+    <div id="integrity-info" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('integrity-info')">&times;</span>
+            <h2>Integrity</h2>
+            <p>Living a life of honesty, truthfulness, and keeping our commitments.</p>
         </div>
     </div>
 
-    <div id="professionalism" class="description">
-        <div class="description-content">
-            <button class="close-btn" onclick="closeDescription()">X</button>
-            <h2>Professionalism:</h2>
-            <p>Maintaining high standards, accountability, and a commitment to continuous improvement in all we do.</p>
+    <div id="professionalism-info" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('professionalism-info')">&times;</span>
+            <h2>Professionalism</h2>
+            <p>Doing what we say, showing up on time, being reliable, and respecting others.</p>
         </div>
     </div>
 
+    <!-- JavaScript -->
     <script>
-        // Show description pop-up
-        function showDescription(value) {
-            const description = document.getElementById(value);
-            if (description) {
-                description.style.display = 'flex'; // Show the specific description
-            } else {
-                console.error(`No description found for: ${value}`);
-            }
+        // Function to show the modal
+        function showModal(infoId) {
+            const modal = document.getElementById(infoId);
+            modal.style.display = "block";
         }
 
-        // Close the description pop-up
-        function closeDescription() {
-            const descriptions = document.querySelectorAll('.description');
-            descriptions.forEach(function(desc) {
-                desc.style.display = 'none'; // Hide all descriptions
+        // Function to close the modal
+        function closeModal(infoId) {
+            const modal = document.getElementById(infoId);
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks anywhere outside of it
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(function(modal) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
             });
         }
     </script>
