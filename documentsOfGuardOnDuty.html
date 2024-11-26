@@ -12,14 +12,27 @@
             margin: 0;
             padding: 0;
             color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;  /* Use the full height of the screen */
             text-align: center;
+        }
+
+        /* Main Content Container */
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
         }
 
         /* Header Styling */
         h1 {
             font-size: 30px; 
             color: #003366;
-            margin-top: 20px;
             text-transform: uppercase;
             font-weight: bold;
             border-bottom: 2px solid #003366;
@@ -96,22 +109,24 @@
 </head>
 <body>
 
-    <h1>Documents of Guard on Duty</h1>
+    <div class="content">
+        <h1>Documents of Guard on Duty</h1>
 
-    <h2>Required Documents</h2>
-    <p>Security guards on duty are required to carry and present the following documents. These documents ensure compliance with legal and agency regulations and are necessary for operational readiness:</p>
+        <h2>Required Documents</h2>
+        <p>Security guards on duty are required to carry and present the following documents. These documents ensure compliance with legal and agency regulations and are necessary for operational readiness:</p>
 
-    <ol>
-        <li>Security Guard License</li>
-        <li>Duty Detail Order</li>
-        <li>Agency and Company issued I.D.</li>
-        <li>License to Operate (LTO) of the Private Security Agency</li>
-        <li>Firearm License</li>
-        <li>Radio License</li>
-    </ol>
+        <ol>
+            <li>Security Guard License</li>
+            <li>Duty Detail Order</li>
+            <li>Agency and Company issued I.D.</li>
+            <li>License to Operate (LTO) of the Private Security Agency</li>
+            <li>Firearm License</li>
+            <li>Radio License</li>
+        </ol>
 
-    <!-- Back Button -->
-    <button onclick="window.history.back();">Back</button>
+        <!-- Back Button -->
+        <button onclick="window.history.back();">Back</button>
+    </div>
 
 </body>
 </html>
