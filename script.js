@@ -17,7 +17,8 @@
                 'mission-and-vision': 'missionandvision.html',
                 'core-values': 'corevalues.html',
                 // Path to the new page, adjust this as needed
-                '5w1h': 'pages/5w1h.html'  // Ensure this is correct
+                '5w1h': 'pages/5w1h.html',  // Ensure this is correct
+                'documents-of-guard-on-duty': 'documentsOfGuardOnDuty.html'  // New page
             };
 
             if (pages[page]) {
